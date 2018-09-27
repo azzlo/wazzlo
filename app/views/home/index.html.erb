@@ -1,2 +1,18 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<h1>Inicio Wazzlo</h1>
+<p>Toma el control de contenedores de agua, como cisternas, tinacos y otros.</p>
+
+<section>
+  <div>
+    <p>Dispositivos actuales: <%= @devices.count %> <i>[<%= link_to 'ver todos', water_devises_path %>]</i></p>
+  </div>
+  <br>
+
+  <hr>
+
+  <div id="home_devises">
+    <h2>Deberias echar un vistaso a estos dispositivos</h2>
+    <% if @devices.count == 0 %>
+      <p>Aun no tienes ningún dispositivo que mostrar. Da click para <%= link_to 'agregar un dispositivo nuevo', new_water_devise_path %>.</p>
+    <% end %>
+  </div>
+</section>
