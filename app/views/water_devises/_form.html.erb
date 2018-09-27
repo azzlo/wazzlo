@@ -1,0 +1,52 @@
+<%= form_with(model: water_devise, local: true) do |form| %>
+  <% if water_devise.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(water_devise.errors.count, "error") %> prohibited this water_devise from being saved:</h2>
+
+      <ul>
+      <% water_devise.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :address %>
+    <%= form.text_field :address %>
+  </div>
+
+  <div class="field">
+    <%= form.label :location %>
+    <%= form.text_field :location %>
+  </div>
+
+  <div class="field">
+    <%= form.label :state %>
+    <%= form.text_field :state %>
+  </div>
+
+  <div class="field">
+    <%= form.label :lat %>
+    <%= form.text_field :lat %>
+  </div>
+
+  <div class="field">
+    <%= form.label :long %>
+    <%= form.text_field :long %>
+  </div>
+
+  <div class="field">
+    <%= form.label :current_value %>
+    <%= form.text_field :current_value %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

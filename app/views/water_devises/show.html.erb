@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @water_devise.name %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @water_devise.address %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @water_devise.location %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @water_devise.state %>
+</p>
+
+<p>
+  <strong>Lat:</strong>
+  <%= @water_devise.lat %>
+</p>
+
+<p>
+  <strong>Long:</strong>
+  <%= @water_devise.long %>
+</p>
+
+<p>
+  <strong>Current value:</strong>
+  <%= @water_devise.current_value %>
+</p>
+
+<%= link_to 'Edit', edit_water_devise_path(@water_devise) %> |
+<%= link_to 'Back', water_devises_path %>
