@@ -1,0 +1,66 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @container.name %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @container.address %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @container.location %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @container.state %>
+</p>
+
+<p>
+  <strong>Lat:</strong>
+  <%= @container.lat %>
+</p>
+
+<p>
+  <strong>Long:</strong>
+  <%= @container.long %>
+</p>
+<p><i>[<a href="https://google.com/maps/@<%= @container.lat %>,<%= @container.long %>z">View on google maps</a>]</i></p>
+
+<p>
+  <strong>Last sensor:</strong>
+  <%= @container.last_sensor || '*Not defined*' %>
+  cm
+</p>
+<p><i><strong><%= @container.current_capacity_percentage %> % capacity</strong></i></p>
+
+<p>
+  <strong>High sensor:</strong>
+  <%= @container.high_sensor || '*Not defined*' %>
+  cm
+</p>
+
+<p>
+  <strong>Low sensor:</strong>
+  <%= @container.low_sensor || '*Not defined*' %>
+  cm
+</p>
+
+<p>
+  <strong>High capacity:</strong>
+  <%= @container.high_capacity %>
+  litters
+</p>
+
+<p>
+  <strong>Low capacity:</strong>
+  <%= @container.low_capacity %>
+  litters
+</p>
+
+<%= link_to 'Edit', edit_container_path(@container) %> |
+<%= link_to 'Back', containers_path %>

@@ -10,19 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_27_030234) do
+ActiveRecord::Schema.define(version: 2018_09_28_203851) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "water_devises", force: :cascade do |t|
+  create_table "containers", force: :cascade do |t|
     t.string "name", null: false
     t.string "address"
     t.string "location"
     t.string "state"
-    t.decimal "lat", precision: 10, scale: 8
-    t.decimal "long", precision: 11, scale: 9
-    t.float "current_value"
+    t.decimal "lat", precision: 10, scale: 2
+    t.decimal "long", precision: 11, scale: 2
+    t.integer "last_sensor"
+    t.integer "high_sensor"
+    t.integer "low_sensor"
+    t.integer "high_capacity"
+    t.integer "low_capacity"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

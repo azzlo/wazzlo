@@ -7,7 +7,11 @@ one:
   state: MyString
   lat: 9.99
   long: 9.99
-  current_value: 1.5
+  last_sensor: 1
+  high_sensor: 1
+  low_sensor: 1
+  high_capacity: 1
+  low_capacity: 1
 
 two:
   name: MyString
@@ -16,4 +20,8 @@ two:
   state: MyString
   lat: 9.99
   long: 9.99
-  current_value: 1.5
+  last_sensor: 1
+  high_sensor: 1
+  low_sensor: 1
+  high_capacity: 1
+  low_capacity: 1

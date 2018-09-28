@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
   def index
-    @devices = WaterDevise.all
+    @containers = Container.all
   end
 end

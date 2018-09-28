@@ -1,2 +1,0 @@
-class WaterDevise < ApplicationRecord
-end

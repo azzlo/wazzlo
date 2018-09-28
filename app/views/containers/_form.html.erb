@@ -1,10 +1,10 @@
-<%= form_with(model: water_devise, local: true) do |form| %>
-  <% if water_devise.errors.any? %>
+<%= form_with(model: container, local: true) do |form| %>
+  <% if container.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(water_devise.errors.count, "error") %> prohibited this water_devise from being saved:</h2>
+      <h2><%= pluralize(container.errors.count, "error") %> prohibited this container from being saved:</h2>
 
       <ul>
-      <% water_devise.errors.full_messages.each do |message| %>
+      <% container.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
@@ -42,8 +42,28 @@
   </div>
 
   <div class="field">
-    <%= form.label :current_value %>
-    <%= form.text_field :current_value %>
+    <%= form.label :last_sensor %>
+    <%= form.number_field :last_sensor %>
+  </div>
+
+  <div class="field">
+    <%= form.label :high_sensor %>
+    <%= form.number_field :high_sensor %>
+  </div>
+
+  <div class="field">
+    <%= form.label :low_sensor %>
+    <%= form.number_field :low_sensor %>
+  </div>
+
+  <div class="field">
+    <%= form.label :high_capacity %>
+    <%= form.number_field :high_capacity %>
+  </div>
+
+  <div class="field">
+    <%= form.label :low_capacity %>
+    <%= form.number_field :low_capacity %>
   </div>
 
   <div class="actions">
