@@ -1,0 +1,1 @@
+json.array! @container_histories, partial: 'container_histories/container_history', as: :history

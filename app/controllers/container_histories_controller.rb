@@ -2,6 +2,7 @@ class ContainerHistoriesController < ApplicationController
   before_action :set_container_with_history, only: [:index]
 
   def index
+    @container_histories = @container.container_histories
   end
 
   private

@@ -1,0 +1,1 @@
+json.extract! history, :sensor_value, :capacity_percentage, :created_at
