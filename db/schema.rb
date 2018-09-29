@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_28_203851) do
+ActiveRecord::Schema.define(version: 2018_09_29_003715) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,9 @@ ActiveRecord::Schema.define(version: 2018_09_28_203851) do
     t.integer "low_capacity"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "contact_sensor_at"
+    t.string "sensor_token"
+    t.index ["sensor_token"], name: "index_containers_on_sensor_token"
   end
 
 end
