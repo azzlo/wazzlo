@@ -40,6 +40,8 @@ class ContainersController < ApplicationController
   # PATCH/PUT /containers/1
   # PATCH/PUT /containers/1.json
   def update
+    @container.contact_sensor_at = Time.now if container_params[:last_sensor].present?
+
     respond_to do |format|
       if @container.update(container_params)
         @container.save_history if container_params[:last_sensor].present?

@@ -1,4 +1,6 @@
 class Container < ApplicationRecord
+  HISTORY_INTERVAL_TIME = 5.minutes
+
   has_many :container_histories
 
   has_secure_token :sensor_token
@@ -26,8 +28,11 @@ class Container < ApplicationRecord
     return nil
   end
 
+  # Crea un registro para el historial solo si el valor actual exede 5 minutos de la ultima historia
   def save_history
-    self.container_histories.create(sensor_value: self.last_sensor, capacity_percentage: self.current_capacity_percentage)
+    if (self.contact_sensor_at - self.container_histories.last.created_at) > HISTORY_INTERVAL_TIME
+      self.container_histories.create(sensor_value: self.last_sensor, capacity_percentage: self.current_capacity_percentage)
+    end
   end
 
 end
