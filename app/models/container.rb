@@ -1,4 +1,6 @@
 class Container < ApplicationRecord
+  has_secure_token :sensor_token
+  
   validates :name, presence: true
 
   # En base al porcentaje actual obtenemos los litros actuales

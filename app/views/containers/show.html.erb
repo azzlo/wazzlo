@@ -29,7 +29,7 @@
   <strong>Long:</strong>
   <%= @container.long %>
 </p>
-<p><i>[<a href="https://google.com/maps/@<%= @container.lat %>,<%= @container.long %>,21z">View on google maps</a>]</i></p>
+<p><i>[<a href="https://google.com/maps/@<%= @container.lat %>,<%= @container.long %>,21z" target="_blank">View on google maps</a>]</i></p>
 
 <p>
   <strong>Last sensor:</strong>
@@ -60,6 +60,16 @@
   <strong>Low capacity:</strong>
   <%= @container.low_capacity %>
   liters
+</p>
+
+<p>
+  <strong>Sensor Token</strong>
+  <%= @container.sensor_token %>
+</p>
+
+<p>
+  <strong>Last sensor contact:</strong>
+  <%= @container.contact_sensor_at %>
 </p>
 
 <%= link_to 'Edit', edit_container_path(@container) %> |
