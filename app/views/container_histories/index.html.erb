@@ -1,0 +1,19 @@
+<h1><i><%= @container.name %></i> - Container history</h1>
+<div id="container_histories">
+  <table>
+    <thead>
+      <th>Datetime</th>
+      <th>Sensor val.</th>
+      <th>Capacity %</th>
+    </thead>
+    <tbody>
+      <% @container.container_histories.each do |history| %>
+        <tr class="history">
+          <td><%= history.created_at %></td>
+          <td><%= history.sensor_value %> cm</strong></td>
+          <td><%= history.capacity_percentage %> %</td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

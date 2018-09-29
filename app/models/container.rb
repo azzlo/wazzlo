@@ -1,4 +1,6 @@
 class Container < ApplicationRecord
+  has_many :container_histories
+
   has_secure_token :sensor_token
   
   validates :name, presence: true
@@ -23,4 +25,9 @@ class Container < ApplicationRecord
 
     return nil
   end
+
+  def save_history
+    self.container_histories.create(sensor_value: self.last_sensor, capacity_percentage: self.current_capacity_percentage)
+  end
+
 end

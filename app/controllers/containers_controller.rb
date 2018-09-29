@@ -42,6 +42,7 @@ class ContainersController < ApplicationController
   def update
     respond_to do |format|
       if @container.update(container_params)
+        @container.save_history if container_params[:last_sensor].present?
         format.html { redirect_to @container, notice: 'Container was successfully updated.' }
         format.json { render :show, status: :ok, location: @container }
       else

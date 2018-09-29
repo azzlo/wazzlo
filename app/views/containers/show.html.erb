@@ -72,5 +72,7 @@
   <%= @container.contact_sensor_at %>
 </p>
 
+<p><strong>Click here to <%= link_to 'view history container', container_container_histories_path(@container) %></strong></p>
+
 <%= link_to 'Edit', edit_container_path(@container) %> |
 <%= link_to 'Back', containers_path %>
