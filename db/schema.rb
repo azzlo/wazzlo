@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_29_003715) do
+ActiveRecord::Schema.define(version: 2018_09_29_024612) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "container_histories", force: :cascade do |t|
+    t.integer "sensor_value"
+    t.integer "capacity_percentage"
+    t.bigint "container_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["container_id"], name: "index_container_histories_on_container_id"
+  end
 
   create_table "containers", force: :cascade do |t|
     t.string "name", null: false
@@ -34,4 +43,5 @@ ActiveRecord::Schema.define(version: 2018_09_29_003715) do
     t.index ["sensor_token"], name: "index_containers_on_sensor_token"
   end
 
+  add_foreign_key "container_histories", "containers"
 end

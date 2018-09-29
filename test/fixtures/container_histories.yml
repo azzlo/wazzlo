@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sensor_value: 1
+  capacity_percentage: 1
+  container: one
+
+two:
+  sensor_value: 1
+  capacity_percentage: 1
+  container: two
