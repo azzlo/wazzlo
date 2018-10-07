@@ -13,8 +13,8 @@
     <header>
       <nav>
         <ul>
-          <li><%= link_to 'Inicio', root_path %></li>
-          <li><%= link_to 'Contenedores', containers_path %></li>
+          <li><%= link_to 'Inicio', root_path, class: "#{'active' if controller_name == 'home'}" %></li>
+          <li><%= link_to 'Contenedores', containers_path, class: "#{'active' if controller_name == 'containers'}" %></li>
         </ul>
       </nav>
     </header>

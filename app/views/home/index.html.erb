@@ -1,26 +1,37 @@
-<h1>Inicio Wazzlo</h1>
-<p>Toma el control de contenedores de agua, como cisternas, tinacos y otros.</p>
+<div class="container">
+  
+  <h1>Inicio Wazzlo</h1>
+  <p>Toma el control de contenedores de agua, como cisternas, tinacos y otros.</p>
 
-<section>
-  <div>
-    <p>Dispositivos actuales: <%= @containers.count %> <i>[<%= link_to 'ver todos', containers_path %>]</i></p>
-  </div>
-  <br>
+  <section>
+    <div>
+      <p>Dispositivos actuales: <%= @containers.count %> <i>[<%= link_to 'ver todos', containers_path %>]</i></p>
+    </div>
+    <br>
 
-  <hr>
+    <hr>
 
-  <h2>Deberias echar un vistazo a estos contenedores</h2>
-  <div id="home_devices">
-    <% if @containers.count == 0 %>
-      <p>Aun no tienes ningún dispositivo que mostrar. Da click para <%= link_to 'agregar un dispositivo nuevo', new_container_path %>.</p>
-    <% else %>
-      <% @containers.each do |container| %>
-        <div class="item">
-          <%= link_to container.name, container_path(container) %>
-          <p><i><strong><%= container.current_capacity_percentage %> % capacity</strong></i></p>
-          <p><i><strong><%= container.current_capacity_liters %> lt</strong> / <%= container.high_capacity %></i></p>
-        </div>
+    <h2>Deberias echar un vistazo a estos contenedores</h2>
+    <div id="home_devices">
+      <% if @containers.count == 0 %>
+        <p>Aun no tienes ningún dispositivo que mostrar. Da click para <%= link_to 'agregar un dispositivo nuevo', new_container_path %>.</p>
+      <% else %>
+        <% @containers.each do |container| %>
+          <div class="item">
+            <div class="title">
+              <%= link_to container.name, container_path(container) %>
+              
+            </div>
+            <div class="left">
+              <p><i><strong><%= container.current_capacity_percentage %> % capacity</strong></i></p>
+              <p><i><strong><%= container.current_capacity_liters %> lt</strong> / <%= container.high_capacity %></i></p>
+            </div>
+            <div class="right">
+              Last contact <%= time_ago_in_words container.contact_sensor_at if container.contact_sensor_at %>
+            </div>
+          </div>
+        <% end %>
       <% end %>
-    <% end %>
-  </div>
-</section>
+    </div>
+  </section>
+</div>
