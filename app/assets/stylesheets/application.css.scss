@@ -59,7 +59,17 @@ nav ul li a:hover{
   border-radius: 2em;
 }
 
+#container_histories{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 30px;
+  margin-top: 3em;
 
+  .chart{
+    display: inline-block;
+    box-shadow: 0 0 5px red;
+  }
+}
 
 #home_devices{
   display: grid;

@@ -1,19 +1,48 @@
-<h1><i><%= @container.name %></i> - Container history</h1>
-<div id="container_histories">
-  <table>
-    <thead>
-      <th>Datetime</th>
-      <th>Sensor val.</th>
-      <th>Capacity %</th>
-    </thead>
-    <tbody>
-      <% @container.container_histories.each do |history| %>
-        <tr class="history">
-          <td><%= history.created_at %></td>
-          <td><%= history.sensor_value %> cm</strong></td>
-          <td><%= history.capacity_percentage %> %</td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+<div class="container">
+  
+  <h1><i><%= @container.name %></i> - Container history</h1>
+  <div id="container_histories">
+
+    <div class="chart">
+      <h3>Última hora</h3>
+      <%= area_chart @container.container_histories.where(created_at: (Time.now - 1.hour)..Time.now).group_by_minute(:created_at).average(:capacity_percentage), height: "200px" %>
+    </div>
+
+    <div class="chart">
+      <h3>Último día</h3>
+      <%= area_chart @container.container_histories.where(created_at: (Time.now - 1.day)..Time.now).group_by_minute(:created_at).average(:capacity_percentage), height: "200px" %>
+    </div>
+
+    <div class="chart">
+      <h3>Última Semana</h3>
+      <%= area_chart @container.container_histories.where(created_at: (Time.now - 1.week)..Time.now).group_by_day(:created_at).average(:capacity_percentage), height: "200px" %>
+    </div>
+
+    <div class="chart">
+      <h3>Último Mes</h3>
+      <%= area_chart @container.container_histories.where(created_at: (Time.now - 1.month)..Time.now).group_by_day(:created_at).average(:capacity_percentage), height: "200px" %>
+    </div>
+
+    <div class="chart">
+      <h3>Último Año</h3>
+      <%= area_chart @container.container_histories.where(created_at: (Time.now - 1.year)..Time.now).group_by_week(:created_at).average(:capacity_percentage), height: "200px" %>
+    </div>
+
+    <table>
+      <thead>
+        <th width="150">Datetime</th>
+        <th width="100">S. dist.</th>
+        <th witdh="100">Capacity%</th>
+      </thead>
+      <tbody>
+        <% @container.container_histories.each do |history| %>
+          <tr class="history">
+            <td><%= history.created_at %></td>
+            <td><%= history.sensor_value %> cm</strong></td>
+            <td><%= history.capacity_percentage %> %</td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 </div>
