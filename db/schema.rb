@@ -29,8 +29,8 @@ ActiveRecord::Schema.define(version: 2018_09_29_024612) do
     t.string "address"
     t.string "location"
     t.string "state"
-    t.decimal "lat", precision: 10, scale: 2
-    t.decimal "long", precision: 11, scale: 2
+    t.decimal "lat", precision: 10, scale: 8
+    t.decimal "long", precision: 11, scale: 9
     t.integer "last_sensor"
     t.integer "high_sensor"
     t.integer "low_sensor"
@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 2018_09_29_024612) do
     t.datetime "updated_at", null: false
     t.datetime "contact_sensor_at"
     t.string "sensor_token"
-    t.index ["sensor_token"], name: "index_containers_on_sensor_token"
+    t.index ["sensor_token"], name: "index_containers_on_sensor_token", unique: true
   end
 
   add_foreign_key "container_histories", "containers"

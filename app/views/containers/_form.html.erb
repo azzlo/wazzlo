@@ -1,67 +1,74 @@
-<%= form_with(model: container, local: true) do |form| %>
-  <% if container.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(container.errors.count, "error") %> prohibited this container from being saved:</h2>
+<div class="row">
+  <div class="col-sm-12 col-md-6 col-lg-3">
+    
+  
+    <%= form_with(model: container, local: true) do |form| %>
+      <% if container.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(container.errors.count, "error") %> prohibited this container from being saved:</h2>
 
-      <ul>
-      <% container.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+          <ul>
+          <% container.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
       <% end %>
-      </ul>
-    </div>
-  <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
+      <div class="form-group">
+        <%= form.label :name, 'Nombre' %>
+        <%= form.text_field :name, class: 'form-control' %>
+      </div>
 
-  <div class="field">
-    <%= form.label :address %>
-    <%= form.text_field :address %>
-  </div>
+      <div class="form-group">
+        <%= form.label :address, 'Dirección' %>
+        <%= form.text_field :address, class: 'form-control' %>
+      </div>
 
-  <div class="field">
-    <%= form.label :location %>
-    <%= form.text_field :location %>
-  </div>
+      <div class="form-group">
+        <%= form.label :location, 'Localidad' %>
+        <%= form.text_field :location, class: 'form-control' %>
+      </div>
 
-  <div class="field">
-    <%= form.label :state %>
-    <%= form.text_field :state %>
-  </div>
+      <div class="form-group">
+        <%= form.label :state, 'Estado' %>
+        <%= form.text_field :state, class: 'form-control' %>
+      </div>
 
-  <div class="field">
-    <%= form.label :lat %>
-    <%= form.text_field :lat %>
-  </div>
+      <div class="form-group">
+        <%= form.label :lat, 'Latitud' %>
+        <%= form.text_field :lat, class: 'form-control' %>
+      </div>
 
-  <div class="field">
-    <%= form.label :long %>
-    <%= form.text_field :long %>
-  </div>
+      <div class="form-group">
+        <%= form.label :long, 'Longitud' %>
+        <%= form.text_field :long, class: 'form-control' %>
+      </div>
 
-  <div class="field">
-    <%= form.label :high_sensor %>
-    <%= form.number_field :high_sensor %>
-  </div>
+      <div class="form-group">
+        <%= form.label :high_sensor, 'Maxima del sensor (cm)' %>
+        <%= form.number_field :high_sensor, class: 'form-control' %>
+      </div>
 
-  <div class="field">
-    <%= form.label :low_sensor %>
-    <%= form.number_field :low_sensor %>
-  </div>
+      <div class="form-group">
+        <%= form.label :low_sensor, 'Minima del sensor (cm)' %>
+        <%= form.number_field :low_sensor, class: 'form-control' %>
+      </div>
 
-  <div class="field">
-    <%= form.label :high_capacity %>
-    <%= form.number_field :high_capacity %>
-  </div>
+      <div class="form-group">
+        <%= form.label :high_capacity, 'Maxima Capacidad (lts)' %>
+        <%= form.number_field :high_capacity, class: 'form-control' %>
+      </div>
 
-  <div class="field">
-    <%= form.label :low_capacity %>
-    <%= form.number_field :low_capacity %>
-  </div>
+      <div class="form-group">
+        <%= form.label :low_capacity, 'Minima Capacidad (lts' %>
+        <%= form.number_field :low_capacity, class: 'form-control' %>
+      </div>
 
-  <div class="actions">
-    <%= form.submit %>
+      <div class="actions">
+        <%= form.submit class: 'btn btn-primary' %>
+      </div>
+    <% end %>
+
   </div>
-<% end %>
+</div>

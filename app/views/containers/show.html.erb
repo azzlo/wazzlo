@@ -3,79 +3,79 @@
   <p id="notice"><%= notice %></p>
 
   <p>
-    <strong>Name:</strong>
+    <strong>Nombre:</strong>
     <%= @container.name %>
   </p>
 
   <p>
-    <strong>Address:</strong>
+    <strong>Dirección:</strong>
     <%= @container.address %>
   </p>
 
   <p>
-    <strong>Location:</strong>
+    <strong>Localidad:</strong>
     <%= @container.location %>
   </p>
 
   <p>
-    <strong>State:</strong>
+    <strong>Estado:</strong>
     <%= @container.state %>
   </p>
 
   <p>
-    <strong>Lat:</strong>
+    <strong>Latitud:</strong>
     <%= @container.lat %>
   </p>
 
   <p>
-    <strong>Long:</strong>
+    <strong>Longitud:</strong>
     <%= @container.long %>
   </p>
-  <p><i>[<a href="https://google.com/maps/@<%= @container.lat %>,<%= @container.long %>,21z" target="_blank">View on google maps</a>]</i></p>
+  <p><a href="https://google.com/maps/@<%= @container.lat %>,<%= @container.long %>,21z" target="_blank" class="btn btn-sm btn-outline-success">Ver en Google Maps</a></p>
 
   <p>
-    <strong>Last sensor:</strong>
+    <strong>Ultima Lectura Sensor:</strong>
     <%= @container.last_sensor || '*Not defined*' %>
     cm
   </p>
   <p><i><strong><%= @container.current_capacity_percentage %> % capacity</strong></i></p>
 
   <p>
-    <strong>High sensor:</strong>
+    <strong>Max. sensor:</strong>
     <%= @container.high_sensor || '*Not defined*' %>
     cm
   </p>
 
   <p>
-    <strong>Low sensor:</strong>
+    <strong>Min. sensor:</strong>
     <%= @container.low_sensor || '*Not defined*' %>
     cm
   </p>
 
   <p>
-    <strong>High capacity:</strong>
+    <strong>Max. capacidad:</strong>
     <%= @container.high_capacity %>
     liters
   </p>
 
   <p>
-    <strong>Low capacity:</strong>
+    <strong>Min. capacidad:</strong>
     <%= @container.low_capacity %>
     liters
   </p>
 
   <p>
-    <strong>Sensor Token</strong>
+    <strong>Token del Sensor</strong>
     <%= @container.sensor_token %>
   </p>
 
   <p>
-    <strong>Last sensor contact:</strong>
+    <strong>Ultimo contacto con el sensor:</strong>
     <%= @container.contact_sensor_at %>
   </p>
 
-  <p><strong>Click here to <%= link_to 'view history container', container_container_histories_path(@container) %></strong></p>
+  <p><strong>Click para <%= link_to 'Ver Historial del Contenedor', container_container_histories_path(@container), class: 'btn btn-info' %></strong></p>
 
-  <%= link_to 'Edit', edit_container_path(@container) %> |
-  <%= link_to 'Back', containers_path %>
+  <%= link_to 'Editar', edit_container_path(@container) %> |
+  <%= link_to 'Regresar', containers_path %>
 </div>

@@ -28,7 +28,7 @@
       <%= area_chart @container.container_histories.where(created_at: (Time.now - 1.year)..Time.now).group_by_week(:created_at).average(:capacity_percentage), height: "200px" %>
     </div>
 
-    <table>
+    <table class="table">
       <thead>
         <th width="150">Datetime</th>
         <th width="100">S. dist.</th>

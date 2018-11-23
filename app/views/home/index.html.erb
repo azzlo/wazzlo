@@ -5,7 +5,9 @@
 
   <section>
     <div>
-      <p>Dispositivos actuales: <%= @containers.count %> <i>[<%= link_to 'ver todos', containers_path %>]</i></p>
+      <h5>Dispositivos actuales:
+        <span class="badge badge-info"><%= @containers.count %></span><i> <%= link_to 'ver todos', containers_path, class: 'btn btn-sm btn-outline-primary' %></i>
+      </h5>
     </div>
     <br>
 
